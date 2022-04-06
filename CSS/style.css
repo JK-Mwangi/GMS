@@ -1,0 +1,28 @@
+.nav-link span:hover {
+    color: rgb(111, 111, 202);
+}
+
+span {
+    font-size: 17px;
+    color: rgb(252, 247, 247);
+}
+
+footer {
+    text-align: center;
+    color: aliceblue;
+    padding: auto;
+    background-color: black;
+}
+
+#active span {
+    color: blue;
+}
+
+#car {
+    background-image: url("../Images/img1.jpeg");
+    background-repeat: none;
+    background-size: cover;
+    height: 700px;
+    background-position: center;
+    background-attachment: fixed;
+}
