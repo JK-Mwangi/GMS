@@ -68,7 +68,7 @@ if($_POST) {
                         </li>
                     </ul>
                     <li class="nav-item">
-                        <a href="" class="btn-custom" style="    margin-right: 0;
+                        <a href="login/login.php" class="btn-custom" style="    margin-right: 0;
                     text-transform: uppercase;
                     font-size: 12px;
                     font-weight: 700;
@@ -79,7 +79,7 @@ if($_POST) {
                     margin-right: 10px;
                     text-decoration-line: none;
                     z-index: 0;
-                    border-radius: 4px;">BecomeAMember</a>
+                    border-radius: 4px;">REGISTER/LOGIN</a>
                     </li>
                     <form class="d-flex">
                         <input class="form-control me-2" type="text" placeholder="Search">
