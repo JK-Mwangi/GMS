@@ -35,6 +35,7 @@ if(!isset($_SESSION["loggedin"])){
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
+
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
@@ -226,7 +227,37 @@ if(!isset($_SESSION["loggedin"])){
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+
             <li class="dropdown-header">
+
+            <?php
+            include "../connect.php";
+            if(isset($_POST['save'])){
+              $profile=$_FILES['profile']['name'];
+              $tempprofile=$_FILES['profile']['tmp_name'];
+              $profilefolder="uploads/".$profile;
+
+              $id=$_SESSION['id'];
+              $add_sql="INSERT INTO members(profile) VALUES('$profile') WHERE id='$id'";
+              $add_results=mysqli_query($conn,$add_sql);
+              if($add_results){
+                if(move_uploaded_file($tempprofile,$profilefolder)){
+                  echo "profile added successfully";
+
+                }
+              
+              }
+
+
+            }
+
+            ?>
+
+           <form action="index.php" method="POST" enctype="multipart/form-data">
+             <input type="file" name="profile">
+             <input type="submit" name="save" value="Add profile">
+
+           </form>
               <h6> <?php echo $_SESSION['fname']." ".$_SESSION['lname']; ?>
             </h6>
               <span><?php echo $_SESSION['usertype'];?></span>
